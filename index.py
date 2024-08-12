@@ -25,8 +25,9 @@ with app.app_context():
 
 def shorten_url():
     char = string.ascii_letters + string.digits
+    short_url = ""
     for i in range(6):
-        short_url = "".join(random.choice(char))
+        short_url += "".join(random.choice(char))
     return short_url
 
 @app.route('/', methods = ["GET","POST"])
